@@ -14,10 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 import javax.swing.JTextArea;
-
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-
-import java.awt.Component;
+import javax.swing.SwingConstants;
 
 /**
  * @version 1.5
@@ -35,7 +32,9 @@ import java.awt.Component;
  * 
  */
 public class OberflaecheMitternachtsformel extends JFrame {
-
+	
+	private static final long	serialVersionUID	= -5763729515552266940L;
+	
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -84,6 +83,7 @@ public class OberflaecheMitternachtsformel extends JFrame {
 		contentPane.add(lblNewLabel_1);
 
 		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField.setBounds(6, 62, 68, 28);
 		contentPane.add(textField);
 		textField.setColumns(10);
@@ -93,6 +93,7 @@ public class OberflaecheMitternachtsformel extends JFrame {
 		contentPane.add(lblx2Koeffizient);
 
 		textField_1 = new JTextField();
+		textField_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField_1.setBounds(86, 62, 68, 28);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
@@ -102,6 +103,7 @@ public class OberflaecheMitternachtsformel extends JFrame {
 		contentPane.add(lblxKoeffizient);
 
 		textField_2 = new JTextField();
+		textField_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField_2.setBounds(161, 62, 68, 28);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
@@ -210,13 +212,15 @@ public class OberflaecheMitternachtsformel extends JFrame {
 
 		textAreaLoesung = new JTextArea();
 		textAreaLoesung.setBounds(6, 210, 425, 49);
-		contentPane.add(textAreaLoesung);
+		textAreaLoesung.setEditable(false);
 		textAreaLoesung.setVisible(false);
+		contentPane.add(textAreaLoesung);
 
 		textAreaDiskriminante = new JTextArea();
 		textAreaDiskriminante.setBounds(6, 124, 425, 46);
-		contentPane.add(textAreaDiskriminante);
+		textAreaDiskriminante.setEditable(false);
 		textAreaDiskriminante.setVisible(false);
+		contentPane.add(textAreaDiskriminante);
 
 		lblDiskriminante = new JLabel("Die Diskriminante:");
 		lblDiskriminante.setBounds(6, 96, 425, 16);
@@ -227,12 +231,5 @@ public class OberflaecheMitternachtsformel extends JFrame {
 		lblLoesung.setBounds(6, 182, 425, 16);
 		contentPane.add(lblLoesung);
 		lblLoesung.setVisible(false);
-
-		contentPane.setFocusTraversalPolicy(new FocusTraversalOnArray(
-				new Component[] { lblNewLabel, lblNewLabel_1, textField,
-						lblx2Koeffizient, textField_1, lblxKoeffizient,
-						textField_2, lblgleichnull, btnBerechne,
-						btnZuruecksetzen, textAreaLoesung,
-						textAreaDiskriminante, lblDiskriminante }));
 	}
 }
